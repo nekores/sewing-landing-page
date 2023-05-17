@@ -1,0 +1,115 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 26/05/2016 14:25
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-ball-of-wool:before { content: "\f100"; }
+.flaticon-button:before { content: "\f101"; }
+.flaticon-button-1:before { content: "\f102"; }
+.flaticon-classic-sewing-machine-with-spool-of-thread:before { content: "\f103"; }
+.flaticon-dressmaker:before { content: "\f104"; }
+.flaticon-fabric:before { content: "\f105"; }
+.flaticon-fashion:before { content: "\f106"; }
+.flaticon-machine:before { content: "\f107"; }
+.flaticon-needle:before { content: "\f108"; }
+.flaticon-needle-1:before { content: "\f109"; }
+.flaticon-needle-2:before { content: "\f10a"; }
+.flaticon-needle-with-thread-to-sew-clothes:before { content: "\f10b"; }
+.flaticon-old-sewing-machine:before { content: "\f10c"; }
+.flaticon-open-scissors:before { content: "\f10d"; }
+.flaticon-pin:before { content: "\f10e"; }
+.flaticon-pin-1:before { content: "\f10f"; }
+.flaticon-scissors:before { content: "\f110"; }
+.flaticon-scissors-1:before { content: "\f111"; }
+.flaticon-sewing:before { content: "\f112"; }
+.flaticon-sewing-1:before { content: "\f113"; }
+.flaticon-sewing-machine:before { content: "\f114"; }
+.flaticon-sewing-machine-1:before { content: "\f115"; }
+.flaticon-sewing-machine-2:before { content: "\f116"; }
+.flaticon-sewing-machine-3:before { content: "\f117"; }
+.flaticon-sewing-machine-4:before { content: "\f118"; }
+.flaticon-sewing-machine-5:before { content: "\f119"; }
+.flaticon-sewing-machine-6:before { content: "\f11a"; }
+.flaticon-sewing-machine-7:before { content: "\f11b"; }
+.flaticon-sewing-machine-8:before { content: "\f11c"; }
+.flaticon-sewing-needle-with-thread:before { content: "\f11d"; }
+.flaticon-sewing-thread:before { content: "\f11e"; }
+.flaticon-shirt:before { content: "\f11f"; }
+.flaticon-spokes:before { content: "\f120"; }
+.flaticon-spool-of-thread:before { content: "\f121"; }
+.flaticon-thread:before { content: "\f122"; }
+.flaticon-thread-1:before { content: "\f123"; }
+.flaticon-two-holes-button:before { content: "\f124"; }
+.flaticon-yarn:before { content: "\f125"; }
+    
+    $font-Flaticon-ball-of-wool: "\f100";
+    $font-Flaticon-button: "\f101";
+    $font-Flaticon-button-1: "\f102";
+    $font-Flaticon-classic-sewing-machine-with-spool-of-thread: "\f103";
+    $font-Flaticon-dressmaker: "\f104";
+    $font-Flaticon-fabric: "\f105";
+    $font-Flaticon-fashion: "\f106";
+    $font-Flaticon-machine: "\f107";
+    $font-Flaticon-needle: "\f108";
+    $font-Flaticon-needle-1: "\f109";
+    $font-Flaticon-needle-2: "\f10a";
+    $font-Flaticon-needle-with-thread-to-sew-clothes: "\f10b";
+    $font-Flaticon-old-sewing-machine: "\f10c";
+    $font-Flaticon-open-scissors: "\f10d";
+    $font-Flaticon-pin: "\f10e";
+    $font-Flaticon-pin-1: "\f10f";
+    $font-Flaticon-scissors: "\f110";
+    $font-Flaticon-scissors-1: "\f111";
+    $font-Flaticon-sewing: "\f112";
+    $font-Flaticon-sewing-1: "\f113";
+    $font-Flaticon-sewing-machine: "\f114";
+    $font-Flaticon-sewing-machine-1: "\f115";
+    $font-Flaticon-sewing-machine-2: "\f116";
+    $font-Flaticon-sewing-machine-3: "\f117";
+    $font-Flaticon-sewing-machine-4: "\f118";
+    $font-Flaticon-sewing-machine-5: "\f119";
+    $font-Flaticon-sewing-machine-6: "\f11a";
+    $font-Flaticon-sewing-machine-7: "\f11b";
+    $font-Flaticon-sewing-machine-8: "\f11c";
+    $font-Flaticon-sewing-needle-with-thread: "\f11d";
+    $font-Flaticon-sewing-thread: "\f11e";
+    $font-Flaticon-shirt: "\f11f";
+    $font-Flaticon-spokes: "\f120";
+    $font-Flaticon-spool-of-thread: "\f121";
+    $font-Flaticon-thread: "\f122";
+    $font-Flaticon-thread-1: "\f123";
+    $font-Flaticon-two-holes-button: "\f124";
+    $font-Flaticon-yarn: "\f125";

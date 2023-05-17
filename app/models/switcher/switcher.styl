@@ -1,0 +1,111 @@
+switcher-color = {
+	styles: #ff7078,
+	emerald: #40d47e,
+	alizarin: #E82790,	
+	carot: #e67e22,
+	peter: #3498db,
+	Dragomir-2: #90c030,
+	Dionysus-Bright-4: #dea333,
+	wet-asphalt : #e74c3c
+}
+.switcher-upack
+	cursor pointer
+	position fixed
+	// width 202px
+	// height 220px
+	width: 77px;
+	height: 477px;
+	background alpha(#333, 80%);
+	// background-color #FBFAFA
+	right -77px
+	top 104px
+	transition 0.6s all ease-in-out
+	border-right none !important
+	border-radius 300px
+	border 2px solid white
+	z-index 1115
+	.switcher-btn
+		top 71px
+		position absolute
+		right 100%
+		padding 9px 12px
+		background alpha(#333, 80%);
+		color primary
+		display inline-block
+		border-right none !important
+		border-radius 50% 0 0 50%
+		border 2px solid white
+		.fa
+			color white
+			font-size 16px
+			position relative
+			top 2px
+		
+
+	.switcher-content
+		position relative
+		padding 10px
+		text-align center
+		text-transform capitalize
+		p
+			color #fff
+		
+		hr
+			width 20%
+			
+		.colors
+			position relative
+			text-align center
+			ul
+				padding 0
+				margin 0
+				
+				li
+					float left
+					width 44px
+					height 44px
+					margin 5px
+					display inline
+					border none
+					border-radius 50%
+					transition 0.5s all
+					// transform rotate(90deg)
+					transition 0.5s all
+					background-color white
+					border 2px solid transparent
+					i
+						&:before
+							font-size 30px
+							left: -15px;
+							top: 1px;
+							position relative
+					&:hover
+						cursor pointer
+						border-color primary
+						// transform rotate(2deg)
+							
+	.variations
+		position relative
+		text-align center
+		color white
+		margin-top 15px
+		hr
+			width 20%
+	.demo
+		ol
+			li
+				padding 5px
+				font-size 12
+				a
+					color white
+					&:hover
+						text-decoration none
+	&:hover
+		right 0%
+
+@media(max-width 767px)
+	.switcher-upack
+		display none
+for name, value in switcher-color
+	.switcher-{name}-bg
+		color value !important

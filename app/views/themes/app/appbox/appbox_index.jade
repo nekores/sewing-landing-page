@@ -1,0 +1,654 @@
+
+//- APPBOX NAVBAR CODED HERE
+mixin appbox-navbar()
+	div()&attributes(attributes)#header.appbox-nvbar
+		header
+			#navbar
+				nav.navbar.navbar-tranglo.navbar-fixed-top(role="navigation",data-spy="affix",data-offset-top="200")
+					.container
+						.row
+							.col-xs-12.col-sm-2.col-md-2
+								.navbar-header
+									button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+										span.sr-only Toggle navigation
+										span.icon-bar
+										span.icon-bar
+										span.icon-bar
+									a(href="index.html").navbar-brand.center-block
+										img(src="img/logo/logo.png" class="img-responsive")
+							.col-xs-12.col-sm-8.col-md-10
+								.collapse.navbar-collapse#bs-example-navbar-collapse-1
+									ul.nav.navbar-nav.pull-right.nav-right
+										li
+											a.page-scroll(href="#about") CONÓCENOS
+										li
+											a.page-scroll(href="#services") servicios
+										li
+											a.page-scroll(href="#franchise") Franquicias
+										li
+											a.page-scroll(href="#findus") Encuéntranos
+										li
+											a.page-scroll(href="#contact") Contáctanos 
+
+//- APPBOX SLIDER CODED HERE
+mixin appbox-slider()
+	section()#slider-video-mc&attributes(attributes).mc_vegas_slider
+		.bg-alphaa
+			.container.hp100
+				.table-1
+					.table-middle-row-1
+						.col-md-12.slider-logo.center-block
+							.photography-titles.mt80
+								h2
+									span.ml20 BIENVENIDOS!
+									img.center-block(src="img/logo/hil.png" class="img-responsive")
+						.col-md-6.col-md-offset-3.text-center.mt20
+							.mt15
+							+btn-appbox("Descúbrenos!", "#about").page-scroll
+//- APPBOX ABOUT SECTION CODED HERE
+mixin mc-about()
+	div()&attributes(attributes)#about.mc-about
+		.container
+			.row
+				.col-md-12
+					+mc-section-titles("","Conócenos","Bienvenidos a Hilvanna! Nuestra boutique de costura está especializada en diferentes tipos de arreglos y transformaciones de prendas, tanto sea de vestir como del hogar.")
+				.col-md-8.col-md-offset-2
+					.content.text-center
+						+btn-appbox("Saber más!", "#")#more
+						div(class="morepara text-left" style="display:none;")
+							hr
+							p.
+								Nuestra filosofía es brindar la calidad y el servicio necesarios para ofrecer únicamente trabajos con finos acabados, nuestras artesanas costureras trabajan dentro de unos excelentes estándares de calidad y compromiso con nuestros clientes, pero siempre con la utilización de las últimas tecnologías implementadas del sector. 
+								<br>
+								<br>
+								En Hilvanna nos interesamos por la satisfacción de nuestros clientes, por lo que ofrecemos un sistema exclusivo de informatización que avisará a su teléfono móvil por medio de un sms en cuanto sus prendas estén listas para recoger! 
+								
+								<br>
+								Descubre nuestra Filosofía:    
+							ul.text-left.clr-white
+								li
+									p Calidad
+								li
+									p Puntualidad
+								li
+									p Finos Acabados
+								li
+									p Trabajamos a Tu Medida
+							<br>
+							p.
+								Queremos que disfrutes de tu experiencia Hilvanna, solicita nuestra tarjeta fidelidad y no te pierdas grandes ventajas! 
+								<br><br>
+								Te ayudamos a sentirte genial y disfrutar de tu moda de una manera especial...a tu medida! 
+								<br><br>
+								Podrás darle una nueva vida a tu armario o a la decoración de tu casa, no lo dudes, en Hilvanna encontrarás tu tienda de arreglos de ropa ideal!
+								<br> <br>
+								Te Esperamos!
+							p
+							.text-center
+								+btn-appbox(" Nuestros Servicios", "#")#close-up
+
+mixin mc-services()
+	div()&attributes(attributes)#services.mc-services
+		.bg-alphaa
+			.container
+				.row
+					.col-md-12
+						+mc-section-titles("","Nuestros Servicios","Ofrecemos arreglos de todo tipo de prendas. Buscas velocidad? Te ofrecemos nuestro servicio express! Te encantará!")
+					- titles=["Todo tipo de Arreglos!", "Confecciones del Hogar","Planchado", "Arreglos para Profesionales"]
+					- ido = ["#service1", "#service2", "#service3", "#service4"]
+					- para = ["En Hilvanna encontrarás todo lo necesario para personalizar, transformar...", "Bienvenidos a casa! En Hilvanna te ayudamos a hacer realidad ese proyecto que ...", "Si ya no tienes ganas de pasarte tu ﬁn de semana o tu tiempo libre planchando…", "Tienes una tienda? Formas parte o diriges un equipo deportivo?..."]
+					- imge = [""]
+						for i in [0,1,2,3]
+							div.mb40.text-center
+								.col-md-6
+									.icon-box.mv10
+										.icon
+											img.center-block(src="img/services/s" + i + ".jpg" class="img-responsive" alt="img")
+										.title
+											h5 #{titles[i]}
+											hr
+										.description
+											p #{para[i]}
+										button.modal-btn.text-center(data-toggle="modal" data-target="#{ido[i]}" data-whatever="@mdo") Saber Mas!
+					.col-md-12.modal-services-shop
+						div.modal-1-bg(class="modal fade" id="service1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+							div(class="modal-dialog")
+								div(class="modal-content")
+									div(class="modal-header")
+										button(type="button" class="close" data-dismiss="modal")
+											span(aria-hidden="true") &times;
+											span(class="sr-only") Close
+										h4(class="modal-title" id="exampleModalLabel") Todo tipo de Arreglos!
+										
+
+									div(class="modal-body")
+										form(role="form")
+											div(class="form-group")
+												img(src="img/services/s0.jpg" class="img-responsive center-block" alt="1pic")
+												.col-md-12.mt15
+													span.
+														En Hilvanna encontrarás todo lo necesario para personalizar, transformar y arreglar tu ropa! Nuestras modistas artesanas tienen las herramientas necesarias para trabajar todo tipo de tejidos incluidos piel, ante, cuero, napa y un largo etc.! Trataremos con cariño tus prendas y querrás volver con más para disfrutar de tu moda! En Hilvanna arreglamos y transformamos cualquier tipo de prenda…no hace falta que te hagamos una lista…si lo tienes en tu armario o en tu imaginación…puedes traerlo!
+
+									div(class="modal-footer")
+										button.btn.btn-model.f-r.mr5(data-dismiss="modal") Close
+
+
+						div.modal-1-bg(class="modal fade" id="service2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+							div(class="modal-dialog")
+								div(class="modal-content")
+									div(class="modal-header")
+										button(type="button" class="close" data-dismiss="modal")
+											span(aria-hidden="true") &times;
+											span(class="sr-only") Close
+										h4(class="modal-title" id="exampleModalLabel") Confecciones del Hogar
+										
+
+									div(class="modal-body")
+										form(role="form")
+											div(class="form-group")
+												img(src="img/services/s1.jpg" class="img-responsive center-block" alt="1pic")
+												.col-md-12.mt15
+													span.
+														Bienvenidos a casa! En Hilvanna te ayudamos a hacer realidad ese proyecto que hace tiempo tienes en mente…tráenos esas telas exóticas que has encontrado o búscalas en nuestros catálogos para poder confeccionar tus cortinas, cojines, manteles, fundas nórdicas, etc.! <br> Tráenos tu proyecto y dale vida a tu hogar!
+														<br><br>
+													span.text-center Hilvanna & Home Sweet Home!
+
+									div(class="modal-footer")
+										button.btn.btn-model.f-r.mr5(data-dismiss="modal") Close
+
+						div.modal-1-bg(class="modal fade" id="service3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+							div(class="modal-dialog")
+								div(class="modal-content")
+									div(class="modal-header")
+										button(type="button" class="close" data-dismiss="modal")
+											span(aria-hidden="true") &times;
+											span(class="sr-only") Close
+										h4(class="modal-title" id="exampleModalLabel") Planchado
+										
+
+									div(class="modal-body")
+										form(role="form")
+											div(class="form-group")
+												img(src="img/services/s2.jpg" class="img-responsive center-block" alt="1pic")
+												.col-md-12.mt15
+													span.
+														Si ya no tienes ganas de pasarte tu ﬁn de semana o tu tiempo libre planchando…si cada vez que llegas a casa ves como crece la pila de ropa por planchar…no temas! Pásate por tu boutique Hilvanna más cercana y déjalo en nuestras manos. Nuestro servicio es rápido, efectivo y muy económico! 
+														<br>También te ofrecemos nuestro exclusivo servicio de planchado con tus arreglos a un precio inigualable! Consulta en tu boutique habitual!
+
+
+									div(class="modal-footer")
+										button.btn.btn-model.f-r.mr5(data-dismiss="modal") Close
+						div.modal-1-bg(class="modal fade" id="service4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+							div(class="modal-dialog")
+								div(class="modal-content")
+									div(class="modal-header")
+										button(type="button" class="close" data-dismiss="modal")
+											span(aria-hidden="true") &times;
+											span(class="sr-only") Close
+										h4(class="modal-title" id="exampleModalLabel") Arreglos para Profesionales
+										
+
+									div(class="modal-body")
+										form(role="form")
+											div(class="form-group")
+												img(src="img/services/s3.jpg" class="img-responsive center-block" alt="1pic")
+												.col-md-12.mt15
+													span.
+														Tienes una tienda? Formas parte o diriges un equipo deportivo? Necesitas servicios para tu empresa u organización? Cuenta con nosotros! En Hilvanna seremos parte de la solución, ofrecemos muchos tipos de recursos para asistir a diferentes colectivos. No dudes en consultarnos! Personalizaremos desde trajes deportivos hasta arreglos para compañías de teatro.
+														<br> <br>Somos especialistas en arreglos para tiendas de ropa…sorprende a tus clientes con el mejor servicio y calidad. No dejes la imagen de tu empresa en manos de cualquiera!
+														<br><br>Hilvanna tu boutique de costura de conﬁanza.
+
+									div(class="modal-footer")
+										button.btn.btn-model.f-r.mr5(data-dismiss="modal") Close
+									
+						//- .col-md-6
+							.icon-box.mv10
+								.icon
+									i.flaticon-machine
+								.title
+									h5 Confecciones del Hogar
+									hr
+								.description
+									p.
+										Bienvenidos a casa! En Hilvanna te ayudamos a hacer realidad ese proyecto que hace tiempo
+									+btn-appbox("Saber más!", "#")#more2
+									div(class="morepara2" style="display:none;")
+										hr
+										p.
+											tienes en mente… tráenos esas telas exóticas que has encontrado o búscalas en nuestros catálogos para poder confeccionar tus cortinas, cojines, manteles, fundas nórdicas, etc.! Tráenos tu proyecto y dale vida a tu hogar! Hilvanna & Home Sweet Home!
+											
+										+btn-appbox("de cerca", "#")#close-up2
+						//- .col-md-6
+							.icon-box.mv10
+								.icon
+									i.flaticon-dressmaker
+								.title
+									h5 Planchado (draw for iron) 
+									hr
+								.description
+									p.
+										Si ya no tienes ganas de pasarte tu ﬁn de semana o tu tiempo libre planchando…si cada vez que
+									+btn-appbox("Saber más!", "#")#more3
+									div(class="morepara3" style="display:none;")
+										hr
+										p.
+											 llegas a casa ves como crece la pila de ropa por planchar…no temas! Pásate por tu boutique Hilvanna más cercana y déjalo en nuestras manos. Nuestro servicio es rápido, efectivo y muy económico! También te ofrecemos nuestro exclusivo servicio de planchado con tus arreglos a un precio inigualable! Consulta en tu boutique habitual!
+
+											
+										+btn-appbox("de cerca", "#")#close-up3
+									
+
+						//- .col-md-6
+							.icon-box.mv10
+								.icon
+									i.flaticon-needle-with-thread-to-sew-clothes
+								.title
+									h5 Arreglos para Profesionales
+									hr
+								.description
+									p.
+										Tienes una tienda? Formas parte o diriges un equipo deportivo? Necesitas servicios para
+									+btn-appbox("Saber más!", "#")#more4
+									div(class="morepara4" style="display:none;")
+										hr
+										p.
+											   tu empresa u organización? Cuenta con nosotros! Tienes una tienda? Formas parte o diriges un equipo deportivo? Necesitas servicios para tu empresa u organización? Cuenta con nosotros! En Hilvanna seremos parte de la solución, ofrecemos muchos tipos de recursos para asistir a diferentes colectivos. No dudes en consultarnos! Personalizaremos desde trajes deportivos hasta arreglos para compañías de teatro. Somos especialistas en arreglos para tiendas de ropa…sorprende a tus clientes con el mejor servicio y calidad. No dejes la imagen de tu empresa en manos de cualquiera! Hilvanna tu boutique de costura de conﬁanza.
+											
+										+btn-appbox("de cerca", "#")#close-up4
+									
+										
+mixin appbox_findus()
+	div&attributes(attributes).appbox_findus#findus
+		.bg-alphaa
+			.container
+				.col-md-12.extra_services
+					+mc-section-titles(""," Encuéntranos","")
+				.col-md-12.mt50.modal-services-shop
+					- team_name =["shop1", "Shop2", "Shop3", "Shop4"]
+					- team_rank =["Piece of cloth", "measurement Process", "trendy and Perfect macthing", "unique slitcing tech"]
+					- tole = ["#exampleModal0", "#exampleModal1","#exampleModal2", "#exampleModal3"]
+					div#img_carousel_services.text-center
+						for i in [0,1,2,3] 
+							.col-md-12
+								div.whole-box
+									img(src="img/work/"+ i +".jpg",alt="image" class="img-responsive")
+									.figcaption
+										.table-custom
+											.table-middle-row-custom
+											p.
+												Bienvenido a la tienda
+											.modal-btn.text-center(data-toggle="modal" data-target="#{tole[i]}" data-whatever="@mdo") dirección
+												
+									.col-md-9.col-sm-9.col-xs-9.no-padding.no-margin.img-text
+										h3.title #{team_name[i]}
+										p.para #{team_rank[i]}
+									.col-md-3.col-sm-3.col-xs-3.no-padding.no-margin.text-center
+										.icon
+											i.fa.fa-arrow-circle-o-down
+											p(style="font-size:8px;") Más Info
+					div.modal-1-bg(class="modal fade" id="exampleModal0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+						div(class="modal-dialog")
+							div(class="modal-content")
+								div(class="modal-header")
+									button(type="button" class="close" data-dismiss="modal")
+										span(aria-hidden="true") &times;
+										span(class="sr-only") Close
+									h4(class="modal-title" id="exampleModalLabel") shop1
+								div(class="modal-body")
+									form(role="form")
+										div(class="form-group")
+											<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="233px" src="https://maps.google.com/maps?hl=en&q=gilgit paksita&ie=UTF8&t=roadmap&z=6&iwloc=B&output=embed"><div><small><a href="http://embedgooglemaps.com">embedgooglemaps.com</a></small></div><div><small><a href="http://buyproxies.io/">buyproxies.io</a></small></div></iframe>
+											.col-md-12.mt15
+												label(for="recipient-name" class="control-label") Horario de Apertura
+													span.
+														7PM - 7AM
+											//- input.no-bdr-rad(type="text" class="form-control disabled" id="recipient-name"  placeholder="Untamed nekoreskrsea")
+											.col-md-12
+												label(for="recipient-name" class="control-label") Email:
+													span.
+														shop@shopmail.com
+											.col-md-12
+												label(for="recipient-name" class="control-label") Teléfono:
+													span.
+														+92-(3123456789)
+											.col-md-12
+												label(for="recipient-name" class="control-label") Dirección`
+													span.
+														Flat #303, ZS Plaza Gilgit
+								div(class="modal-footer")
+									//- button.btn.btn-model.f-r(value="") shop
+									button.btn.btn-model.f-r.mr5(data-dismiss="modal") Cancel
+					div.modal-1-bg(class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+						div(class="modal-dialog")
+							div(class="modal-content")
+								div(class="modal-header")
+									button(type="button" class="close" data-dismiss="modal")
+										span(aria-hidden="true") &times;
+										span(class="sr-only") Close
+									h4(class="modal-title" id="exampleModalLabel") Shop2
+								div(class="modal-body")
+									form(role="form")
+										div(class="form-group")
+											<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="233px" src="https://maps.google.com/maps?hl=en&q=gilgit paksita&ie=UTF8&t=roadmap&z=6&iwloc=B&output=embed"><div><small><a href="http://embedgooglemaps.com">embedgooglemaps.com</a></small></div><div><small><a href="http://buyproxies.io/">buyproxies.io</a></small></div></iframe>
+											.col-md-12.mt15
+												label(for="recipient-name" class="control-label") Horario de Apertura
+													span.
+														7PM - 7AM
+											.col-md-12
+												label(for="recipient-name" class="control-label") Email:
+													span.
+														shop@shopmail.com
+											.col-md-12
+												label(for="recipient-name" class="control-label") Teléfono:
+													span.
+														+92-(3123456789)
+											.col-md-12
+												label(for="recipient-name" class="control-label") Dirección`
+													span.
+														Flat #303, ZS Plaza Gilgit
+								div(class="modal-footer")
+									//- button.btn.btn-model.f-r(value="") Shop
+									button.btn.btn-model.f-r.mr5(data-dismiss="modal") Cancel
+					div.modal-1-bg(class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+						div(class="modal-dialog")
+							div(class="modal-content")
+								div(class="modal-header")
+									button(type="button" class="close" data-dismiss="modal")
+										span(aria-hidden="true") &times;
+										span(class="sr-only") Close
+									h4(class="modal-title" id="exampleModalLabel") Shop3
+								div(class="modal-body")
+									form(role="form")
+										div(class="form-group")
+											<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="233px" src="https://maps.google.com/maps?hl=en&q=gilgit paksita&ie=UTF8&t=roadmap&z=6&iwloc=B&output=embed"><div><small><a href="http://embedgooglemaps.com">embedgooglemaps.com</a></small></div><div><small><a href="http://buyproxies.io/">buyproxies.io</a></small></div></iframe>
+											.col-md-12.mt15
+												label(for="recipient-name" class="control-label") Horario de Apertura
+													span.
+														7PM - 7AM
+											.col-md-12
+												label(for="recipient-name" class="control-label") Email:
+													span.
+														shop@shopmail.com
+											.col-md-12
+												label(for="recipient-name" class="control-label") Teléfono:
+													span.
+														+92-(3123456789)
+											.col-md-12
+												label(for="recipient-name" class="control-label") Dirección`
+													span.
+														Flat #303, ZS Plaza Gilgit
+								div(class="modal-footer")
+									//- button.btn.btn-model.f-r(value="") Shop
+									button.btn.btn-model.f-r.mr5(data-dismiss="modal") Cancel
+					div.modal-1-bg(class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+						div(class="modal-dialog")
+							div(class="modal-content")
+								div(class="modal-header")
+									button(type="button" class="close" data-dismiss="modal")
+										span(aria-hidden="true") &times;
+										span(class="sr-only") Close
+									h4(class="modal-title" id="exampleModalLabel") Shop4
+								div(class="modal-body")
+									form(role="form")
+										div(class="form-group")
+											<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="100%" height="233px" src="https://maps.google.com/maps?hl=en&q=gilgit paksita&ie=UTF8&t=roadmap&z=6&iwloc=B&output=embed"><div><small><a href="http://embedgooglemaps.com">embedgooglemaps.com</a></small></div><div><small><a href="http://buyproxies.io/">buyproxies.io</a></small></div></iframe>
+											.col-md-12.mt15
+												label(for="recipient-name" class="control-label") Horario de Apertura
+													span.
+														7PM - 7AM
+											.col-md-12
+												label(for="recipient-name" class="control-label") Email:
+													span.
+														shop@shopmail.com
+											.col-md-12
+												label(for="recipient-name" class="control-label") Teléfono:
+													span.
+														+92-(3123456789)
+											.col-md-12
+												label(for="recipient-name" class="control-label") Dirección`
+													span.
+														Flat #303, ZS Plaza Gilgit
+								div(class="modal-footer")
+									//- button.btn.btn-model.f-r(value="") Shop
+									button.btn.btn-model.f-r.mr5(data-dismiss="modal") Cancel
+
+						
+
+//- APPBOX WORK SECTION CODED HERE
+mixin appbox-work()
+	div()&attributes(attributes)#portfolio.appbox-work
+		.container(style="width:100%").no-padding
+			.row.no-margin
+				.col-md-12
+					+mc-section-titles("","portafolio")
+		.container-fluid#container1.no-padding
+			.row.mt30
+				.col-md-12.col-sm-12.col-xs-12.no-padding
+					nav
+						ul.nav(class="portfolio-filter-gallery" id="filters")
+							li
+								a.active(class="all filter active", data-filter="all") All
+							li
+								a(class="filter ", data-filter=".images") Images
+							li
+								a(class="filter", data-filter=".videos") Videos
+					div.popup-gallery
+						for i in [0,1,2,3,4,5,6,7,8,9,10,11]
+							.col-md-3.mix.images.col-sm-3.no-padding
+								.img-box-portfolio
+									img(src="img/work/" + i + ".jpg" class="img-responsive")
+									.img-content
+									.font-icon
+										.table-1
+											.table-middle-row-1.text-center.center-block
+												ul.list-inline
+													//- li
+													//- 	+icon-fa('fa-share-alt', 'icon-frame-inverse-white icon-sm rounded-cirlce', '#')
+													li
+														+icon-fa('fa-search-plus', ' icon-frame-inverse-white icon-sm','img/work/' + i + '.jpg')
+					div.popup-gallery(style="margin-left:10px !important; margin-right:10px !important;")
+						for i in [0]
+							.col-md-4.mix.videos.col-sm-3.no-padding
+								.img-box-portfolio(style="margin-bottom: -6px !important;")
+									//- img(src="img/work/" + i + ".jpg" class="img-responsive")
+									video(width="100%" height="100%" controls src="video/1.mp4" type="video/mp4")
+									//- .img-content
+									//- .font-icon
+									//- 	.table-1
+									//- 		.table-middle-row-1.text-center.center-block
+									//- 			ul.list-inline
+									//- 				//- li
+									//- 				//- 	+icon-fa('fa-share-alt', 'icon-frame-inverse-white icon-sm rounded-cirlce', '#')
+									//- 				li
+									//- 					+icon-fa('fa-search-plus', ' icon-frame-inverse-white icon-sm','img/places/' + i + '.jpg')
+					
+		
+//- APPBOX FRANCHISE SECTION CODED HERE
+mixin appbox_franchise()
+	div&attributes(attributes).appbox_franchise#franchise
+		.container
+			.row
+				.col-md-12
+					+mc-section-titles("","FRANQUICIAS")
+				.col-md-6
+					video(width="100%" height="100%" controls src="video/1.mp4" type="video/mp4")
+				.col-md-6
+					.franchise_text
+						h4 ÚNETE AL ÉXITO DE HILVANNA!
+						hr
+						ul
+							li
+								p Sector en pleno crecimiento.
+							li
+								p Sistemas de trabajo de alta productividad.
+							li
+								p Alto ratio Inversión/Rentabilidad.
+							li
+								p Software Especializado.
+							li
+								p Concepto único de tiendas.
+						h5 Descargar nuestro dossier y forma parte de Hilvanna!
+						button.btn.btn-franchise
+							a(href="img/pdf_franquicias.pdf") Download PDF
+
+				.col-md-12.text-bottom
+					.franchise_text
+						h3 ESTE MODELO DE NEGOCIO OFRECE UNA INVERSIÓN RENTABLE & ESTABLE!
+
+
+//- APPBOX CONTACT SECTION CODED HERE
+mixin appbox-contact()
+	div()&attributes(attributes).mc-contact#contact
+		.bg-alphaa
+			.container
+				.row
+					.col-md-12
+						+mc-section-titles("","Contáctanos")
+					.col-md-6
+						form(action="php/contact.php" method="post")
+							.col-md-12
+								.input-group
+									label
+										h5.mt20 nombre*
+									input(type="text" placeholder="por ejemplo: María López" class="form-control" required name="name")
+							.col-md-6
+
+								.input-group
+									label
+										h5.mt20 correo electrónico*
+									input(type="email" placeholder="your@youremail.com" class="form-control" required name="email")
+							.col-md-6
+								.input-group
+									label
+										h5.mt20 número de teléfono *
+									input(type="text" placeholder=" +(123)-12345678" class="form-control" required name="phonenumber")
+							.col-md-12
+								.input-group
+									label
+										h5.mt20 mensaje
+									textarea(type="text" rows="8" placeholder="tu mensaje" class="form-control" required name="message")
+									
+							.col-md-6
+								button.contact_btn(type="submit") Enviar
+							.col-md-6.mv15
+								ul.list-inline
+									li(style="padding:0px !important;")
+										+icon-fa('fa-facebook', 'icon-frame-primary facebook icon-sm rounded-circle')
+									li(style="padding:0px !important;")
+										+icon-fa('fa-twitter', 'icon-frame-primary twitter icon-sm rounded-circle')
+									li(style="padding:0px !important;")
+										+icon-fa('fa-instagram', 'icon-frame-primary instagram icon-sm rounded-circle')
+									li(style="padding:0px !important;")
+										+icon-fa('fa-youtube', 'icon-frame-primary youtube icon-sm rounded-circle')
+					.col-md-6
+						.img-shop.mt45
+							img(src="img/bg/11.jpg" class="img-responsive")
+							.partition1.text-center
+								div
+									p.head.
+										Oficinas Centrales
+									.line
+
+										hr
+								ul.no-padding.fair_price_list.mt5
+									li
+										span.price.fa.fa-home
+											a(href="") dirección
+										p 22 SIN MING LANE #06-76 MIDIVEW CITY SINGAPORE 573969
+										hr
+									li
+										span.price.fa.fa-phone
+											a(href="") teléfono
+										p +65 6969 6690
+										hr
+									li
+										span.price.fa.fa-envelope
+											a(href="") correo electrónico
+										p INFO@MEDIACULTURE.COM.SG
+
+mixin apply_job()
+	div()&attributes(attributes).apply_job
+		.container
+			.row
+				.col-md-12
+					+mc-section-titles("","solicitar un puesto de trabajo","")
+				.col-md-12.modal_apply_job
+					.job-btn.text-center(data-toggle="modal" data-target="#job_button" data-whatever="@mdo") Aplica ya
+					div.modal-1-bg(class="modal fade" id="job_button" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+						div(class="modal-dialog")
+							div(class="modal-content")
+								div(class="modal-header")
+									button(type="button" class="close" data-dismiss="modal")
+										span(aria-hidden="true") &times;
+										span(class="sr-only") Close
+									h4(class="modal-title" id="exampleModalLabel") nueva Solicitud de Registro
+								div(class="modal-body")
+									form(role="form")
+										div(class="form-group")
+											label(for="recipient-name" class="control-label") tu nombre:
+											input.no-bdr-rad(type="text" class="form-control" id="recipient-name"  placeholder="")
+											label(for="recipient-name" class="control-label") Tu correo electrónico:
+											input.no-bdr-rad(type="email" class="form-control" id="recipient-name" placeholder="ejemplo: you@yourmail.com")
+										div(class="form-group")
+											label(for="recipient-name" class="control-label") Subir CV:
+											input.no-bdr-rad(type="file" class="form-control" id="recipient-name" placeholder="")
+									div(class="form-group")
+										label(for="message-text" class="control-label") tu mensaje:
+										textarea.no-bdr-rad(class="form-control" rows="5" id="message-text" placeholder="Tipo Descripción corta")
+								div(class="modal-footer")
+									button.btn.btn-model.f-r(value="submit") enviar
+									button.btn.btn-model.f-r.mr5(data-dismiss="modal") cancelar
+
+mixin appbox-footer-bottom()
+	div()&attributes(attributes).mc-footer-bottom
+		.container
+			.row
+				.col-md-8
+					.footer-text
+						<h5 class="p20"> © Copyright Hilvanna 2016 |<a href="https://pk.linkedin.com/in/nekores "> Designer Portfolio </a></h5> 
+
+				.col-md-4
+					.pull-right
+						a(href="terms.html").legal_button.text-center avisco legal
+
+
+
+
+//- BUTTONS FOR APPBOX
+mixin btn-appbox(name, link)
+	a.no-decoration(href='#{link}')&attributes(attributes)
+		.btn.btn-appbox&attributes(attributes) #{name}
+
+mixin btn-appbox-glass(name)
+	a.no-decoration(href='#')&attributes(attributes)
+		.btn.btn-appbox-glass&attributes(attributes) #{name}
+
+mixin btn-appbox-icon(name, icon)
+	a.no-decoration&attributes(attributes)
+		.btn.btn-appbox-icon&attributes(attributes) #{name}
+			span.fa.fa-(class=icon)&attributes(attributes).pl10
+
+mixin btn-appbox-icon-glass(name, icon)
+	a.no-decoration&attributes(attributes)
+		.btn.btn-appbox-icon-glass&attributes(attributes) #{name}
+			span.fa.fa-(class=icon)&attributes(attributes).pl10
+
+
+
+
+//- SECITON TITLES APPBOX
+mixin mc-section-titles(before_text,after_text, text_para)
+	div()&attributes(attributes).mc-section-title
+		
+		ul.list-inline.text-center
+			li.before-text
+				h2 #{before_text}
+			li.after-text
+				h2 #{after_text}
+		hr.hr1
+		hr.hr2
+		.col-md-8.col-md-offset-2.text-center
+			p #{text_para}
+
+
+

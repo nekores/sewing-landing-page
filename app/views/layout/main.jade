@@ -1,0 +1,25 @@
+include ../../config/jade.jade
+include ../includes.jade
+doctype html
+html(lang="es" xmlns="http://www.w3.org/1999/xhtml" xml:lang="es")
+	head
+		block title
+			title #{theme_name}
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+			<link rel="icon" type="image/png" href="img/logo/ico.png" />
+
+		// CSS INCLUDES
+		for i in css
+			link(type='text/css' rel ='stylesheet' href = i)
+		//- <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet", type="text/css", href="css/styles.css" id='switcher-target'>
+
+			
+	// === START : BODY ===
+	body
+		block main_content
+		
+		// JS INCLUDES
+		for s in js
+			script(type='text/javascript' src=s)
